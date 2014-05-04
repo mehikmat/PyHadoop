@@ -1,0 +1,14 @@
+*.pyc
+*.o
+*.obj
+
+*.lib
+*.a
+
+*.dll
+*.so
+*.so.*
+
+*.exe
+*.out
+*.app

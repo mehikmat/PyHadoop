@@ -1,4 +1,4 @@
 PyHadoop
 ========
 
-Hadoop Command-line interface
+Python based Hadoop command-line interface
