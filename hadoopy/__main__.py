@@ -1,28 +1,40 @@
+import argparse
+import sys
+import os
+from resources import command_map
+
 __author__ = 'hikmat'
 
 """
 Module docstring.
 This serves as a long usage message.
 """
-__author__ = 'hikmat'
 
-import argparse
+HADOOP_HOME = ""
 
-def cmd():
-	parser = argparse.ArgumentParser(description='Process some integers.')
+def set_vars():
+    global HADOOP_HOME
+    HADOOP_HOME = os.getenv("HADOOP_HOME","NULL")   
 
-	parser.add_argument('list', metavar='ls', type=string, nargs='+',
-	                   help='lists hadoop file system')
-	parser.add_argument('cat' help='reads top 10 lines of file in stored hdfs')
-
-	args = parser.parse_args()
-
-	print args.accumulate(args.integers)
-
-
-def main():
-    cmd()
-
+def validate_vars():
+	if HADOOP_HOME == "NULL":
+		print("HADOOP_HOME has not been set. Please set it.")
+		exit()	
 
 if __name__ == '__main__':
-    sys.exit(main())
+    set_vars()
+    validate_vars()
+
+    parser = argparse.ArgumentParser(description='Processes commands aganist hadoop')
+    parser.add_argument("command", help='hadoop command to be executed')	
+    args = parser.parse_args()
+    cmd = args.command    
+   
+    cmd_exec = command_map[cmd]
+    cmd_exec = cmd_exec.replace("$HADOOP_HOME",HADOOP_HOME)
+    
+    print("Executing {} .........".format(cmd_exec))
+
+    os.system(cmd_exec)
+    	
+   
