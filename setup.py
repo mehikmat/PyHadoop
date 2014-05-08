@@ -24,7 +24,7 @@ setup(
   keywords = ['hadoop', 'python', 'command-line'], # arbitrary keywords
   long_description=open('README.md').read(),
   classifiers=[
-        "Development Status :: Alpha",
+        "Development Status :: 1 - Beta",
         "Topic :: Utilities",
         "License ::MIT License",
     ],
