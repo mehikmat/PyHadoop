@@ -12,3 +12,7 @@
 *.exe
 *.out
 *.app
+build
+dist
+*.egg*
+MANIFEST
