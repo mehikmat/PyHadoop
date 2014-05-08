@@ -11,11 +11,11 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-  name = 'hadoopy',
-  packages = ['hadoopy'], # this must be the same as the name above
+  name = 'pyhadoop',
+  packages = ['pyhadoop'], # this must be the same as the name above
   version = '0.1',
   description = 'Python based hadoop command-line interface',
-  author = 'Hikmat Dhamee',
+  author = 'mehikmat',
   author_email = 'me.hemant.available@gmail.com',
   license = "MIT",
   platforms = ["any"],
@@ -24,15 +24,15 @@ setup(
   keywords = ['hadoop', 'python', 'command-line'], # arbitrary keywords
   long_description=open('README.md').read(),
   classifiers=[
-        "Development Status :: Production/Stable",
+        "Development Status :: 5 - Production/Stable",
         "Topic :: Utilities",
-        "License ::MIT License",
+        "License :: OSI Approved :: MIT License",
     ],
   entry_points={
         "console_scripts": [
-            "hadoopy=hadoopy:main",
-            "hadoopy%s=hadoopy:main" % sys.version[:1],
-            "hadoopy%s=hadoopy:main" % sys.version[:3],
+            "pyhadoop=pyhadoop:main",
+            "pyhadoop%s=pyhadoop:main" % sys.version[:1],
+            "pyhadoop%s=pyhadoop:main" % sys.version[:3],
         ],
     },
 )
