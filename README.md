@@ -12,7 +12,8 @@ $> sudo pip install pyhadoop
 What is this?
 --------------
 It's very samll app.
-Actaully I have build it for myself to automate daily task related to hadoop.
+Actaully I have built it for myself to automate daily tasks related to hadoop.
+You cat get benefited from it too.
 
 Usage:
 -------
